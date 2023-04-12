@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WXGWBPS');</script>
+    <!-- End Google Tag Manager -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJJ6CYKHZ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TJJ6CYKHZ6');
+</script>
+
+  <script
+    id="becookies.tech-scripts"
+    src="https://core.becookies.tech/script.js"
+    data-id="3f136560-d85c-11ed-9235-9b71fa9b75de"
+    charset="utf-8">
+</script>
+
+  <script>
+    let email = "teerahitchana@gmail.com";
+    let first = "teera";
+    let last = "hitchana";
+    let response_consent = {};
+    async function consent() {
+      window.onload = async () => {
+        await beconsent
+          .init({ uid: `${email}`, name: `${first} ${last}` })
+          .then((result) => {
+            if (result == undefined) beconsent.show();
+            else response_consent = result;
+          });
+      };
+    }
+    function reconsent() {
+      let email = "teerahitchana";
+      beconsent.init(email);
+      beconsent.show();
+    }
+    async function dsrmClick() {
+      let data = {
+        uid: response_consent.uniqueIdentifier,
+        consentId: response_consent.consentFormId,
+        identity: {
+          firstName: first,
+          lastName: last,
+          email: response_consent.uniqueIdentifier,
+          country: "TH",
+        },
+      };
+      dsrm.init(data);
+    }
+  </script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500&display=swap");
+    html {
+      font-family: "Kanit", sans-serif;
+    }
+    .content {
+      width: 100%;
+      text-align: center;
+      margin-top: 200px;
+    }
+    h1 {
+      font-size: 70px;
+    }
+    button {
+      font-size: 15px;
+      padding: 10px 20px;
+      background-color: rgb(0, 110, 255);
+      color: #fff;
+      text-transform: uppercase;
+      border: 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXGWBPS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  <script>
+    consent();
+  </script>
+  <div class="content">
+    <h1>DEMO  Script</h1>
+    <button onclick="reconsent()">reconsent</button>
+    <button onclick="dsrmClick()">DSRM</button>
+  </div>
+</body>
